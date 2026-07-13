@@ -3,8 +3,8 @@ public class main{
 
     public static void main(String[] args){
         
-        CreateMatrix matrix = new CreateMatrix(args[0]);
-        System.out.println(matrix.getCount());
+        CreateBlocks blocks = new CreateBlocks(args[0]);
+        System.out.println(blocks.getBlockCount());
         
     }
 
