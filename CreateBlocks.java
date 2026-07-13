@@ -10,8 +10,10 @@ public class CreateBlocks{
             InputStream input = new FileInputStream(file);
             ArrayList<Byte[][]> bytes = new ArrayList<>();
 
+            CreateMatrix matrix = new CreateMatrix();
+
             while(input.read() != -1){
-                CreateMatrix matrix = new CreateMatrix(file);
+                CreateMatrix(file);
                 block_count++;
             }
         }
