@@ -37,18 +37,29 @@ class CreateMatrix{
             bufferList.add(buffer);
             input.close();
 
-            for( i=0; i<4; i++){
-                for( j=0; j<4; j++){
-                    System.out.print(buffer[i][j] + " ");
-                }
-                System.out.println();
-            }
+            PrintAll(bufferList);
 
             System.out.println("Block count :: " + bufferList.size());
         }
         catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+
+    static void PrintAll(ArrayList<byte[][]> array){
+        int length = array.size();
+        for(int i=0; i<length; i++){
+            byte[][] buffer = array.get(i);
+            for(int j=0; j<4; j++){
+                for(int k=0; k<4; k++){
+                    System.out.print(buffer[j][k] + " ");
+                }
+                System.out.println();
+            }
+
+        }
+        System.out.println();
     }
     
 }
