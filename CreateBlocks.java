@@ -10,11 +10,15 @@ public class CreateBlocks{
             InputStream input = new FileInputStream(file);
             ArrayList<Byte[][]> bytes = new ArrayList<>();
 
-            CreateMatrix matrix = new CreateMatrix();
+            CreateMatrix matrix = new CreateMatrix(file);
 
+            int counter =0;
             while(input.read() != -1){
-                CreateMatrix(file);
-                block_count++;
+                new CreateMatrix(file);
+                if(counter%16 == 0){
+                    block_count++;
+                }
+                counter++;
             }
         }
         catch(Exception e){
