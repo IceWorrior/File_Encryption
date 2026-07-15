@@ -39,7 +39,7 @@ class CreateMatrix{
             bufferList.add(buffer);
             input.close();
 
-            System.out.println("Block count :: " + bufferList.size());
+            //System.out.println("Block count :: " + bufferList.size());
         }
         catch(Exception e){
             e.printStackTrace();
