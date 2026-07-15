@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 class CreateMatrix{
 
+    ArrayList<byte[][]> bufferList = new ArrayList<>();
+
     CreateMatrix (String file){
         try {
 
             InputStream input = new FileInputStream(file);
             int data, i=0, j=0;
             byte[][] buffer = new byte[4][4];
-            ArrayList<byte[][]> bufferList = new ArrayList<>();
+            //ArrayList<byte[][]> bufferList = new ArrayList<>();
 
             do{
                 
@@ -37,8 +39,6 @@ class CreateMatrix{
             bufferList.add(buffer);
             input.close();
 
-            PrintAll(bufferList);
-
             System.out.println("Block count :: " + bufferList.size());
         }
         catch(Exception e){
@@ -46,11 +46,15 @@ class CreateMatrix{
         }
     }
 
+    ArrayList<byte[][]> getBlocks(){
+        return bufferList;
+    }
 
-    static void PrintAll(ArrayList<byte[][]> array){
-        int length = array.size();
+
+    void PrintAll(){
+        int length = bufferList.size();
         for(int i=0; i<length; i++){
-            byte[][] buffer = array.get(i);
+            byte[][] buffer = bufferList.get(i);
             for(int j=0; j<4; j++){
                 for(int k=0; k<4; k++){
                     System.out.print(buffer[j][k] + " ");
